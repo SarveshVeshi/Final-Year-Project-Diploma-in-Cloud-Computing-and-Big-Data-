@@ -6,7 +6,8 @@
     --surface-color: #ffffff;
     --text-main: #2c3e50;
     --text-muted: #6c757d;
-    --primary-color: #2563eb; /* Royal Blue */
+    --primary-color: #2563eb;
+    /* Royal Blue */
     --primary-hover: #1d4ed8;
     --danger-color: #dc3545;
     --success-color: #198754;
@@ -48,7 +49,8 @@ body {
     transition: color 0.2s;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     color: var(--primary-color) !important;
 }
 
@@ -83,14 +85,21 @@ body {
 }
 
 /* Typography */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 700;
     color: var(--text-main);
     margin-bottom: 1rem;
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
 
 label {
     display: block;
@@ -121,7 +130,9 @@ input:focus {
 }
 
 /* Buttons */
-.btn-primary, .next, input[type="submit"] {
+.btn-primary,
+.next,
+input[type="submit"] {
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -137,7 +148,9 @@ input:focus {
     text-decoration: none;
 }
 
-.btn-primary:hover, .next:hover, input[type="submit"]:hover {
+.btn-primary:hover,
+.next:hover,
+input[type="submit"]:hover {
     background-color: var(--primary-hover);
 }
 
@@ -182,7 +195,8 @@ input:focus {
     color: var(--text-muted);
 }
 
-.divider::before, .divider::after {
+.divider::before,
+.divider::after {
     content: '';
     flex: 1;
     border-bottom: 1px solid var(--border-color);
@@ -219,7 +233,8 @@ input:focus {
 }
 
 .camera-feed-box img {
-    position: relative; /* Sit on top of placeholder */
+    position: relative;
+    /* Sit on top of placeholder */
     z-index: 1;
     display: block;
     max-width: 100%;
@@ -246,6 +261,12 @@ input:focus {
     background-color: #f8d7da;
     color: #842029;
     border: 1px solid #f5c2c7;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
 }
 
 /* Utility to hide/show */

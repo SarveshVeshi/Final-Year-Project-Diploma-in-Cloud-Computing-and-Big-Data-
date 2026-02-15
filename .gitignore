@@ -153,8 +153,6 @@ cython_debug/
 .vscode/
 
 # Project Specific
-models/*.p
-models/*.pickle
 data/processed/
 node_modules/
 dist/

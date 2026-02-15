@@ -148,7 +148,112 @@
     }
 }
 
-/* Video Container */
+/* Sign Output Container - Static Image Rendering */
+.sign-output-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--bg-color, #f8f9fa);
+    /* Use global theme */
+    border-radius: var(--radius-lg, 0.75rem);
+    /* Use global theme */
+    border: 1px solid var(--border-color, #dee2e6);
+    /* Use global theme */
+    margin-top: 2rem;
+    min-height: 150px;
+    align-items: flex-start;
+    box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+    /* Use global theme */
+}
+
+.sign-output-container.empty {
+    display: none;
+}
+
+.word-container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+    /* Prevent overflow */
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    align-items: center;
+    word-break: break-word;
+    /* Break long words if needed */
+}
+
+.letter-image {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    background: white;
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeInLetter 0.3s ease-in forwards;
+    transition: transform 0.2s ease;
+}
+
+.letter-image:hover,
+.letter-image.missing:hover {
+    transform: scale(1.05);
+}
+
+.letter-image.missing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-muted, #6c757d);
+    /* Use global theme */
+    background: white;
+    /* Match base .letter-image */
+    /* Inherits: width, height, border-radius, padding, box-shadow, opacity, animation, transition */
+}
+
+@keyframes fadeInLetter {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sign-output-container {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .word-container {
+        padding: 0.75rem;
+        gap: 0.35rem;
+    }
+
+    .letter-image {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .letter-image {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* ============================================
+   LEGACY: Video Container Styles
+   Preserved for backward compatibility with
+   /generate_sign_video_api endpoint.
+   Not used by current Text → Sign feature.
+   ============================================ */
+/* Legacy Video Container - Keep for backward compatibility */
 .video-container-premium {
     margin-top: 2.5rem;
     border-radius: 20px;
